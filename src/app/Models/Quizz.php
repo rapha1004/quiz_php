@@ -13,7 +13,7 @@ class Quizz extends Model
 
     protected $fillable = array('title', 'logo_url');
 
-    protected function getUsers(): BelongsToMany
+    public function getUsers(): BelongsToMany
     {
         return $this->belongsToMany(User::class);
     }

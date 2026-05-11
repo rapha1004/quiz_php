@@ -40,8 +40,8 @@ class User extends Authenticatable
         ];
     }
 
-    protected function getQuiz()
+    public function getQuiz()
     {
-        return $this->hasMany(Quizz::class);
+        return $this->belongsToMany(Quizz::class);
     }
 }

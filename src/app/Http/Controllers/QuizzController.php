@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Quizz;
 
 class QuizzController extends Controller
 {
     function index() {
-        return view('quizz');
+        $quizzs = Quizz::all();
+        return view('quizz', ['quizzs' => $quizzs]);
     }
 }
