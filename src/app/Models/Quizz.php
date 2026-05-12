@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
+#[Table("quizzs")]
 class Quizz extends Model
 {
     use HasFactory;

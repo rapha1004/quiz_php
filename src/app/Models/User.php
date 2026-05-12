@@ -9,6 +9,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use App\Models\Quizz;
 
+#[Table("users")]
 class User extends Authenticatable
 {
     use HasFactory, Notifiable;
