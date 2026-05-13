@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('title')->nullable(false);
             $table->integer('position')->unsigned()->nullable(false);
             $table->foreignId('quizz_id')->constrained()->onDelete('cascade');
+            $table->timestamps();
         });
     }
 

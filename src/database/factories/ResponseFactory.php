@@ -4,6 +4,8 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
+use App\Models\Question;
+
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Response>
  */
@@ -17,7 +19,9 @@ class ResponseFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'text' => $this->faker->sentence(),
+            'is_correct' => false,
+            'question_id' => Question::factory(),
         ];
     }
 }
