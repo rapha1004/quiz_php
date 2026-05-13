@@ -24,6 +24,12 @@ class QuizzSeeder extends Seeder
             ->has(
                 Question::factory()
                     ->count(4)
+                    ->state(new Sequence(
+                        ['position' => 1],
+                        ['position' => 2],
+                        ['position' => 3],
+                        ['position' => 4],
+                    ))
                     ->has(
                         Response::factory()
                             ->count(4)
@@ -33,6 +39,7 @@ class QuizzSeeder extends Seeder
                                 ['is_correct' => false],
                                 ['is_correct' => false],
                             ))
+
                     )
             )
             ->create();
