@@ -11,8 +11,13 @@ class Question extends Model
 
     protected $fillable = array('title', 'position', 'quizz_id');
 
-    public function getQuizz()
+    public function quizz()
     {
         return $this->belongsTo(Quizz::class);
+    }
+
+    public function responses()
+    {
+        return $this->hasMany(Response::class);
     }
 }
