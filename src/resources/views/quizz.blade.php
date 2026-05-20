@@ -48,7 +48,7 @@
                             <p class="mt-5 text-sm leading-7 text-slate-600">Dive into a thoughtfully designed quiz card with a refined layout and calmer tones.</p>
                             <div class="mt-6 flex items-center justify-between gap-3">
                                 <span class="rounded-full bg-amber-100 px-3 py-1 text-sm font-semibold text-amber-800 ring-1 ring-amber-200">Balanced</span>
-                                <a href="#" class="inline-flex items-center justify-center rounded-full bg-amber-700 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-amber-800 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2">Begin</a>
+                                <a href="{{ route('quizzs.participate', $quizz->id) }}" class="inline-flex items-center justify-center rounded-full bg-amber-700 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-amber-800 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2">Begin</a>
                             </div>
                         </article>
                     @empty

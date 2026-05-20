@@ -11,6 +11,7 @@ Route::redirect('/', '/login');
 
 
 Route::get('/quizzs', [QuizzController::class, 'index'])->name('quizzs.index');
+Route::get('/quizzs/{quizzId}/question/{questionNumber?}', [QuizzController::class, 'participate'])->name('quizzs.participate');
 
 
 
