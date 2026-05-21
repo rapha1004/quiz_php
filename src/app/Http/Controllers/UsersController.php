@@ -11,4 +11,12 @@ class UsersController extends Controller
         $users = User::all();
         return view('users', ['users' => $users]);
     }
+
+    public function destroy(User $user)
+    {
+        $user->delete();
+
+        return redirect()->route('admin.users.index')
+            ->with('success', 'User deleted successfully.');
+    }
 }
