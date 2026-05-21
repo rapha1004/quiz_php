@@ -24,11 +24,19 @@ Route::middleware('auth')->group(function () {
     })->middleware(['verified'])->name('dashboard');
 
     // Admin-only: list all users
-    Route::get('/admin/users', [UsersController::class, 'index'])
+    Route::get('/dashboard/admin/users', [UsersController::class, 'index'])
         ->middleware(IsAdminMiddleware::class)
         ->name('admin.users.index');
 
-    Route::delete('/admin/users/{user}', [UsersController::class, 'destroy'])
+    Route::get('/dashboard/admin/users/{user}/edit', [UsersController::class, 'edit'])
+        ->middleware(IsAdminMiddleware::class)
+        ->name('admin.users.edit');
+
+    Route::put('/dashboard/admin/users/{user}', [UsersController::class, 'update'])
+        ->middleware(IsAdminMiddleware::class)
+        ->name('admin.users.update');
+
+    Route::delete('/dashboard/admin/users/{user}', [UsersController::class, 'destroy'])
         ->middleware(IsAdminMiddleware::class)
         ->name('admin.users.destroy');
 });
